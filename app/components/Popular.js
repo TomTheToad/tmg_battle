@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { fetchPopularRepos } from '../utils/api'
 import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle, FaRegBell } from 'react-icons/fa'
 import Card from './Card'
+import Loading from './Loading'
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
   const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']
@@ -31,7 +32,6 @@ LanguagesNav.propTypes = {
 function ReposGrid({ repos }) {
   return (
     <u className='grid space-around'>
-      {/* <pre>{JSON.stringify(repos, null, 2)}</pre> */}
       {repos.map((repo, index) => {
         const { name, owner, html_url, stargazers_count, forks, open_issues } = repo
         const { login, avatar_url } = owner
@@ -133,7 +133,7 @@ export default class Popular extends React.Component {
           onUpdateLanguage={this.updateLanguage}
         />
 
-        {this.isLoading() && <p>LOADING</p>}
+        {this.isLoading() && <Loading text='Fetching repos' />}
         {error && <p className='center-text error'>{error}</p>}
         {repos[selectedLanguage] && < ReposGrid repos={repos[selectedLanguage]} />}
       </React.Fragment>
