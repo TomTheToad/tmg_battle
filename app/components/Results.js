@@ -15,7 +15,7 @@ function ProfileList({ profile }) {
       </li>
       {profile.location && (
         <li>
-          <Tooltip text="User's location">
+          <Tooltip text={`${profile.login}'s location`}>
             <FaCompass color='rgb(144, 115, 255)' size={22} />
             {profile.location}
           </Tooltip>
@@ -23,7 +23,7 @@ function ProfileList({ profile }) {
       )}
       {profile.company && (
         <li>
-          <Tooltip text="User's company">
+          <Tooltip text={`${profile.login}'s company`}>
             <FaBriefcase color='#795548' size={22} />
             {profile.company}
           </Tooltip>
