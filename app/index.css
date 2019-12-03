@@ -16,6 +16,12 @@ li {
   list-style-type: none;
 }
 
+.dark {
+  color:#DADADA;
+  background: #1c2022;
+  min-height: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
