@@ -25,10 +25,10 @@ class App extends React.Component {
       <ThemeProvider value={this.state}>
         <div className={this.state.theme}>
           <div className='container'>
-            {/* <Popular /> */}
             <Nav />
 
-            <Battle />
+            <Popular />
+            {/* <Battle /> */}
           </div>
         </div>
       </ThemeProvider>
