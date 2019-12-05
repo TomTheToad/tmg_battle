@@ -13,15 +13,11 @@ const styles = {
 }
 
 export default class Loading extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      content: props.text
-    }
+  state = {
+    content: this.props.text
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const { speed, text } = this.props
 
     this.interval = window.setInterval(() => {
@@ -31,9 +27,7 @@ export default class Loading extends React.Component {
     }, speed)
   }
 
-  componentWillUnmount() {
-    window.clearInterval(this.interval)
-  }
+  componentWillUnmount = () => { window.clearInterval(this.interval) }
 
   render() {
     return (
